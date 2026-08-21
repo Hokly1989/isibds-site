@@ -58,52 +58,65 @@
 
     /* ── HERO ── */
     .hero {
-      min-height: 100vh; display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      padding: 120px 64px 80px;
+      min-height: 85vh;
+      display: flex; align-items: flex-end;
+      padding: 0;
       background-image: url('https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/building-system-main.jpg');
       background-color: #0d1b2e;
       background-size: cover;
-      background-position: center;
+      background-position: center top;
       position: relative; overflow: hidden;
     }
     .hero::before {
       content: ''; position: absolute; inset: 0;
-      background: linear-gradient(to right, rgba(10,18,35,0.92) 0%, rgba(10,18,35,0.75) 50%, rgba(10,18,35,0.45) 100%);
+      background: linear-gradient(to right,
+        rgba(8,15,30,0.88) 0%,
+        rgba(8,15,30,0.70) 40%,
+        rgba(8,15,30,0.30) 100%);
       pointer-events: none;
     }
+    .hero::after {
+      content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+      width: 3px; background: var(--c-accent);
+    }
     .hero-grid-bg { display: none; }
-    .hero-content { position: relative; max-width: 560px; }
+    .hero-inner {
+      position: relative; width: 100%;
+      display: grid; grid-template-columns: 1fr 1fr;
+      align-items: flex-end;
+      padding: 100px 64px 60px;
+      gap: 40px;
+    }
+    .hero-content { max-width: 500px; }
     .hero-eyebrow {
       display: flex; align-items: center; gap: 12px;
-      font-size: 11px; font-weight: 700; letter-spacing: 0.18em;
-      text-transform: uppercase; color: var(--c-accent); margin-bottom: 20px;
+      font-size: 10.5px; font-weight: 700; letter-spacing: 0.2em;
+      text-transform: uppercase; color: var(--c-accent); margin-bottom: 18px;
     }
     .hero-eyebrow::before {
-      content: ''; display: block; width: 28px; height: 2px; background: var(--c-accent);
+      content: ''; display: block; width: 24px; height: 2px; background: var(--c-accent); flex-shrink: 0;
     }
     .hero h1 {
-      font-family: var(--f-display); font-size: clamp(38px, 4.5vw, 62px);
-      font-weight: 900; line-height: 1.08; letter-spacing: -0.02em;
-      color: #fff; margin-bottom: 20px;
+      font-family: var(--f-display); font-size: clamp(36px, 4vw, 56px);
+      font-weight: 900; line-height: 1.1; letter-spacing: -0.015em;
+      color: #fff; margin-bottom: 16px;
     }
     .hero h1 em { font-style: normal; color: var(--c-accent); }
     .hero-sub {
-      font-size: 15px; color: rgba(255,255,255,0.55); max-width: 440px;
-      line-height: 1.75; margin-bottom: 36px;
+      font-size: 14px; color: rgba(255,255,255,0.5); max-width: 400px;
+      line-height: 1.75; margin-bottom: 32px;
     }
     .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
     .btn-primary {
       display: inline-flex; align-items: center; gap: 8px;
-      padding: 13px 28px; font-size: 14px; font-weight: 600;
+      padding: 12px 24px; font-size: 13.5px; font-weight: 600;
       background: var(--c-accent); color: #fff; border-radius: var(--radius);
       text-decoration: none; transition: background 0.2s, transform 0.15s;
     }
     .btn-primary:hover { background: var(--c-accent2); transform: translateY(-1px); }
     .btn-outline {
       display: inline-flex; align-items: center; gap: 8px;
-      padding: 13px 28px; font-size: 14px; font-weight: 600;
+      padding: 12px 24px; font-size: 13.5px; font-weight: 600;
       border: 1.5px solid rgba(255,255,255,0.3); color: #fff;
       border-radius: var(--radius); text-decoration: none;
       transition: border-color 0.2s, background 0.2s;
@@ -111,39 +124,36 @@
     .btn-outline:hover { border-color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.06); }
     .btn-outline-dark {
       display: inline-flex; align-items: center; gap: 8px;
-      padding: 13px 28px; font-size: 14px; font-weight: 600;
+      padding: 12px 24px; font-size: 13.5px; font-weight: 600;
       border: 1.5px solid var(--c-border); color: var(--c-navy);
       border-radius: var(--radius); text-decoration: none;
       transition: border-color 0.2s, background 0.2s;
     }
     .btn-outline-dark:hover { border-color: var(--c-accent); color: var(--c-accent); }
 
-    /* Hero Stats — right column, 2x2 grid */
+    /* Hero Stats — right side floating, 2x2, no box border */
     .hero-stats {
-      position: relative;
-      display: grid; grid-template-columns: 1fr 1fr; gap: 0;
-      border: 1px solid rgba(255,255,255,0.1);
-      max-width: 420px; margin-left: auto;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 0; align-self: flex-end;
     }
     .hero-stats .stat-item {
-      padding: 36px 32px;
-      border-right: 1px solid rgba(255,255,255,0.1);
-      border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding: 16px 32px;
+      border-left: 1px solid rgba(255,255,255,0.15);
     }
-    .hero-stats .stat-item:nth-child(2),
-    .hero-stats .stat-item:nth-child(4) { border-right: none; }
-    .hero-stats .stat-item:nth-child(3),
-    .hero-stats .stat-item:nth-child(4) { border-bottom: none; }
     .stat-num {
-      font-family: var(--f-display); font-size: 38px; font-weight: 900; color: #fff; letter-spacing: -0.02em; line-height: 1;
+      font-family: var(--f-display); font-size: 36px; font-weight: 900;
+      color: #fff; letter-spacing: -0.02em; line-height: 1;
     }
-    .stat-label { font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.4); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 8px; }
+    .stat-label {
+      font-size: 10px; font-weight: 700; color: rgba(255,255,255,0.38);
+      letter-spacing: 0.12em; text-transform: uppercase; margin-top: 7px;
+    }
     .stat-badge { display: flex; align-items: center; gap: 10px; }
     .stat-badge-icon {
-      width: 42px; height: 42px; border-radius: 50%;
-      background: rgba(232,97,42,0.2); border: 1.5px solid var(--c-accent);
+      width: 36px; height: 36px; border-radius: 50%; flex-shrink: 0;
+      background: rgba(232,97,42,0.15); border: 1.5px solid var(--c-accent);
       display: flex; align-items: center; justify-content: center;
-      font-size: 9px; font-weight: 800; color: var(--c-accent); letter-spacing: 0.01em;
+      font-size: 8px; font-weight: 800; color: var(--c-accent);
     }
 
     /* ── SECTION BASE ── */
@@ -364,34 +374,36 @@
 <!-- ══ HERO ══ -->
 <section class="hero" id="home">
   <div class="hero-grid-bg"></div>
-  <!-- Left: text -->
-  <div class="hero-content">
-    <span class="hero-eyebrow">ISI Building Solutions</span>
-    <h1>Leader in<br /><em>Pre-Engineered</em><br />Building &amp;<br />Steel Structures</h1>
-    <p class="hero-sub">Pioneering prefabrication to transform the construction industry for safer working conditions and environmental sustainability.</p>
-    <div class="hero-actions">
-      <a class="btn-primary" href="#projects">Explore Projects →</a>
-      <a class="btn-outline" href="#contact">Contact Us</a>
+  <div class="hero-inner">
+    <!-- Left: text -->
+    <div class="hero-content">
+      <span class="hero-eyebrow">ISI Building Solutions</span>
+      <h1>Leader in<br /><em>Pre-Engineered</em><br />Building &amp;<br />Steel Structures</h1>
+      <p class="hero-sub">Pioneering prefabrication to transform the construction industry for safer working conditions and environmental sustainability.</p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="#projects">Explore Projects →</a>
+        <a class="btn-outline" href="#contact">Contact Us</a>
+      </div>
     </div>
-  </div>
-  <!-- Right: stats 2x2 grid -->
-  <div class="hero-stats">
-    <div class="stat-item">
-      <div class="stat-num">1000+</div>
-      <div class="stat-label">Projects Completed</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-num">15+</div>
-      <div class="stat-label">Years of Innovation</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-num">300+</div>
-      <div class="stat-label">Team Members</div>
-    </div>
-    <div class="stat-item stat-badge">
-      <div class="stat-badge-icon">ISO</div>
-      <div>
-        <div style="font-size:13px;font-weight:700;color:#fff;line-height:1.2;">9001:2015<br/>Certified</div>
+    <!-- Right: stats floating 2x2 -->
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">1000+</div>
+        <div class="stat-label">Projects Completed</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">15+</div>
+        <div class="stat-label">Years of Innovation</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">300+</div>
+        <div class="stat-label">Team Members</div>
+      </div>
+      <div class="stat-item stat-badge">
+        <div class="stat-badge-icon">ISO</div>
+        <div>
+          <div style="font-size:12px;font-weight:700;color:#fff;line-height:1.3;">9001:2015<br/>Certified</div>
+        </div>
       </div>
     </div>
   </div>

@@ -21,7 +21,7 @@
 .app-h2{font-family:var(--f-head);font-size:2rem;font-weight:700;color:var(--primary);letter-spacing:-.01em;margin-bottom:40px;text-transform:uppercase}
 .app-list{list-style:none}
 .app-item{border-bottom:1px solid #F1F5F9}
-.app-btn{width:100%;display:flex;align-items:center;gap:16px;padding:18px 0;cursor:pointer;background:none;border:none;font-family:var(--f);text-align:left;transition:color .2s;color:var(--primary);font-size:18px;font-weight:600;letter-spacing:-.01em}
+.app-btn{width:100%;display:flex;align-items:center;gap:16px;padding:18px 0;cursor:pointer;background:none;border:none;outline:none;font-family:var(--f);text-align:left;transition:color .2s;color:var(--primary);font-size:18px;font-weight:600;letter-spacing:-.01em}
 .app-btn:hover,.app-btn.active{color:var(--accent)}
 .app-dot{width:8px;height:8px;flex-shrink:0;background:rgba(15,27,48,.15);transition:background .2s}
 .app-btn.active .app-dot,.app-btn:hover .app-dot{background:var(--accent)}

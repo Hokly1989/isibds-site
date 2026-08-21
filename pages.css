@@ -122,3 +122,29 @@ footer{background:var(--primary-dark);color:#fff;margin-top:auto}
 .f-bot{border-top:1px solid rgba(255,255,255,.1);padding:24px 0;display:flex;justify-content:space-between;align-items:center;gap:16px;font-size:12px}
 @media(max-width:639px){.f-bot{flex-direction:column}}
 .edit-badge{position:fixed;bottom:16px;right:16px;z-index:9999;background:var(--accent);color:#fff;padding:8px 16px;font-size:11px;font-weight:700;letter-spacing:.05em}
+
+/* ── DROPDOWNS (sub-pages) ── */
+.nav-links{align-self:stretch}
+.dd{position:static;align-self:stretch;display:flex;align-items:center}
+.dd>button{height:100%}
+.dd>button svg{transition:transform .2s}
+.dd:hover>button{color:var(--accent)}
+.dd:hover>button svg{transform:rotate(180deg)}
+.dd-menu{position:absolute;top:100%;left:0;right:0;background:#fff;
+  box-shadow:0 12px 24px -8px rgba(15,27,48,.12);padding:24px 0;
+  opacity:0;visibility:hidden;pointer-events:none;
+  transition:opacity .18s ease,visibility 0s linear .25s;z-index:60}
+.dd:hover .dd-menu{opacity:1;visibility:visible;pointer-events:auto;
+  transition:opacity .18s ease,visibility 0s linear 0s}
+.dd-menu:hover{opacity:1;visibility:visible;pointer-events:auto;transition:none}
+.dd-inner{max-width:1536px;margin:0 auto;padding:0 16px;display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+@media(min-width:1024px){.dd-inner{padding:0 32px}}
+@media(max-width:1279px){.dd-inner{grid-template-columns:repeat(3,1fr)}}
+.dd-item{display:flex;flex-direction:column;padding:24px;border:1px solid var(--slate-200);background:#fff;transition:border-color .2s,box-shadow .2s}
+.dd-item:hover{border-color:rgba(212,98,43,.4);box-shadow:0 4px 12px -2px rgba(15,27,48,.08)}
+.dd-head{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.dd-icon{width:32px;height:32px;flex-shrink:0;background:rgba(212,98,43,.1);display:flex;align-items:center;justify-content:center;color:var(--accent)}
+.dd-item .t{font-size:15px;font-weight:700;color:var(--primary);letter-spacing:-.01em;text-transform:none;line-height:1.25}
+.dd-item:hover .t{color:var(--accent)}
+.dd-item .d{font-size:13px;color:var(--steel);line-height:1.6;font-weight:400;letter-spacing:0;text-transform:none;margin-bottom:18px;flex:1}
+.dd-item .more{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:6px}

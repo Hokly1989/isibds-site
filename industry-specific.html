@@ -4,21 +4,20 @@
 <link rel="stylesheet" href="pages.css"/>
 <style>
 .ind-hero-sec{padding-top:72px}
-.ind-hero{position:relative;min-height:340px;display:flex;align-items:center;background:var(--primary-dark);overflow:hidden}
+.ind-hero{position:relative;min-height:45vh;display:flex;align-items:center;background:var(--primary-dark);overflow:hidden}
 .ind-hero .gridbg{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:64px 64px}
-.ind-hero .lbar{position:absolute;left:0;top:0;bottom:0;width:4px;background:rgba(212,98,43,.2)}
-.ind-hero .lbar-top{position:absolute;left:0;top:0;height:160px;width:4px;background:var(--accent)}
+.ind-hero .lbar,.ind-hero .lbar-top{display:none}
 .ind-hero .container{position:relative;z-index:10;padding-top:48px;padding-bottom:48px}
 .ind-hero h1{font-family:var(--f-head);font-size:3rem;font-weight:700;color:#fff;line-height:1.2;letter-spacing:-.025em;margin-bottom:20px}
 .ind-hero p{color:rgba(255,255,255,.5);font-size:18px;max-width:42rem;line-height:1.65}
 @media(max-width:767px){.ind-hero h1{font-size:2rem}}
 
-.ind-overview{padding:64px 0;background:#fff}
+.ind-overview{padding:48px 0 80px;background:#fff}
 .ind-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 @media(max-width:1023px){.ind-cards{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:639px){.ind-cards{grid-template-columns:1fr}}
 
-.icard{border:1px solid var(--slate-200);padding:32px;display:flex;flex-direction:column;transition:border-color .3s,box-shadow .3s;text-decoration:none;color:inherit}
+.icard{border:1px solid #E8ECF0;border-radius:8px;padding:32px;display:flex;flex-direction:column;transition:border-color .3s,box-shadow .3s;text-decoration:none;color:inherit;background:#fff}
 .icard:hover{border-color:rgba(212,98,43,.4);box-shadow:0 10px 15px -3px rgba(0,0,0,.08)}
 .icard-icon{width:44px;height:44px;background:rgba(212,98,43,.1);color:var(--accent);display:flex;align-items:center;justify-content:center;margin-bottom:20px}
 .icard h3{font-family:var(--f-head);font-size:20px;font-weight:700;color:var(--primary);margin-bottom:10px}

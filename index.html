@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ISI Building Solutions | Cambodia's Leader in Pre-Engineered Buildings & Steel Structures</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --c-bg:       #ffffff;
+      --c-bg2:      #f5f6f7;
+      --c-bg3:      #eef0f2;
+      --c-navy:     #0d1b2e;
+      --c-navy2:    #1a2c42;
+      --c-accent:   #c8271e;   /* ISI red */
+      --c-accent2:  #e0352b;
+      --c-gold:     #c8972a;   /* secondary highlight */
+      --c-text:     #1a2535;
+      --c-muted:    #6b7280;
+      --c-border:   #e2e5e9;
+      --f-display:  'Manrope', sans-serif;
+      --f-body:     'Inter', sans-serif;
+      --radius:     4px;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--f-body); background: var(--c-bg); color: var(--c-text); line-height: 1.6; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 48px; height: 68px;
+      background: #fff; border-bottom: 1px solid var(--c-border);
+      box-shadow: 0 1px 8px rgba(0,0,0,0.06);
+    }
+    .nav-logo img { height: 36px; display: block; }
+    .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+    .nav-links a {
+      font-size: 13.5px; font-weight: 500; color: var(--c-navy);
+      text-decoration: none; letter-spacing: 0.01em; transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--c-accent); }
+    .nav-right { display: flex; align-items: center; gap: 20px; }
+    .nav-lang { font-size: 13px; color: var(--c-muted); }
+    .nav-lang span { color: var(--c-navy); font-weight: 600; }
+    .nav-cta {
+      padding: 9px 20px; font-size: 13px; font-weight: 600;
+      background: var(--c-navy); color: #fff; border: none;
+      border-radius: var(--radius); cursor: pointer; text-decoration: none;
+      transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--c-accent); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh; display: flex; align-items: center;
+      padding: 120px 48px 80px;
+      background: var(--c-navy);
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 55% 65% at 75% 45%, rgba(200,39,30,0.12) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .hero-grid-bg {
+      position: absolute; inset: 0; opacity: 0.03;
+      background-image:
+        linear-gradient(rgba(255,255,255,1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .hero-content { position: relative; max-width: 700px; }
+    .hero-eyebrow {
+      display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--c-accent2); margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-family: var(--f-display); font-size: clamp(42px, 5.5vw, 72px);
+      font-weight: 900; line-height: 1.05; letter-spacing: -0.025em;
+      color: #fff; margin-bottom: 24px;
+    }
+    .hero h1 em { font-style: normal; color: var(--c-accent2); }
+    .hero-sub {
+      font-size: 16px; color: rgba(255,255,255,0.58); max-width: 500px;
+      line-height: 1.75; margin-bottom: 40px;
+    }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 13px 28px; font-size: 14px; font-weight: 600;
+      background: var(--c-accent); color: #fff; border-radius: var(--radius);
+      text-decoration: none; transition: background 0.2s, transform 0.15s;
+    }
+    .btn-primary:hover { background: var(--c-accent2); transform: translateY(-1px); }
+    .btn-outline {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 13px 28px; font-size: 14px; font-weight: 600;
+      border: 1.5px solid rgba(255,255,255,0.25); color: #fff;
+      border-radius: var(--radius); text-decoration: none;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .btn-outline:hover { border-color: rgba(255,255,255,0.6); background: rgba(255,255,255,0.06); }
+    .btn-outline-dark {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 13px 28px; font-size: 14px; font-weight: 600;
+      border: 1.5px solid var(--c-border); color: var(--c-navy);
+      border-radius: var(--radius); text-decoration: none;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .btn-outline-dark:hover { border-color: var(--c-accent); color: var(--c-accent); }
+
+    /* Hero Stats */
+    .hero-stats {
+      display: flex; gap: 48px; margin-top: 60px; padding-top: 44px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    .stat-num {
+      font-family: var(--f-display); font-size: 34px; font-weight: 800; color: #fff; letter-spacing: -0.02em;
+    }
+    .stat-num span { color: var(--c-accent2); }
+    .stat-label { font-size: 12px; color: rgba(255,255,255,0.45); letter-spacing: 0.04em; margin-top: 2px; }
+    .stat-badge { display: flex; align-items: center; gap: 10px; }
+    .stat-badge-icon {
+      width: 42px; height: 42px; border-radius: 50%;
+      background: rgba(200,39,30,0.18); border: 1px solid rgba(200,39,30,0.35);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 10px; font-weight: 800; color: var(--c-accent2); letter-spacing: 0.01em;
+    }
+
+    /* ── SECTION BASE ── */
+    section { padding: 96px 48px; }
+    .section-eyebrow {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--c-accent); margin-bottom: 14px;
+    }
+    .section-title {
+      font-family: var(--f-display); font-size: clamp(30px, 3.8vw, 48px);
+      font-weight: 800; line-height: 1.1; letter-spacing: -0.02em; color: var(--c-navy); margin-bottom: 18px;
+    }
+    .section-title em { font-style: normal; color: var(--c-accent); }
+    .section-sub { font-size: 15.5px; color: var(--c-muted); max-width: 520px; line-height: 1.75; }
+
+    /* ── VALUES ── */
+    .values-section { background: var(--c-bg2); }
+    .values-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px;
+      background: var(--c-border); border: 1px solid var(--c-border); margin-top: 52px;
+    }
+    .value-card { background: #fff; padding: 40px 32px; transition: background 0.2s; }
+    .value-card:hover { background: var(--c-bg2); }
+    .value-num { font-size: 11px; font-weight: 700; color: var(--c-accent); letter-spacing: 0.1em; margin-bottom: 20px; }
+    .value-title { font-family: var(--f-display); font-size: 19px; font-weight: 700; color: var(--c-navy); margin-bottom: 10px; }
+    .value-desc { font-size: 14px; color: var(--c-muted); line-height: 1.7; }
+
+    /* ── COMPANY PROFILE ── */
+    .profile-section { background: #fff; }
+    .profile-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .profile-tags { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 32px; }
+    .profile-tag {
+      display: flex; align-items: center; gap: 8px;
+      padding: 9px 14px; border: 1px solid var(--c-border);
+      border-radius: var(--radius); font-size: 13px; color: var(--c-muted);
+    }
+    .profile-tag strong { color: var(--c-accent); font-weight: 700; font-size: 14px; }
+    .profile-stats { display: flex; gap: 40px; margin-top: 36px; }
+    .p-stat-num { font-family: var(--f-display); font-size: 40px; font-weight: 800; color: var(--c-navy); }
+    .p-stat-num span { color: var(--c-accent); }
+    .p-stat-label { font-size: 12px; color: var(--c-muted); letter-spacing: 0.04em; }
+    .profile-right { position: relative; }
+    .profile-img-wrap { aspect-ratio: 4/3; border-radius: 2px; overflow: hidden; border: 1px solid var(--c-border); }
+    .profile-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+    .iso-badge {
+      position: absolute; bottom: -16px; right: -16px;
+      background: var(--c-accent); color: #fff;
+      padding: 14px 18px; font-weight: 800; font-size: 12px;
+      border-radius: var(--radius); line-height: 1.4;
+    }
+
+    /* ── PRODUCTS ── */
+    .products-section { background: var(--c-bg2); }
+    .products-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 48px; }
+    .products-grid {
+      display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px;
+      background: var(--c-border); border: 1px solid var(--c-border);
+    }
+    .product-card {
+      background: #fff; padding: 32px 24px;
+      display: flex; flex-direction: column; gap: 14px;
+      transition: background 0.2s; cursor: pointer; text-decoration: none; color: inherit;
+    }
+    .product-card:hover { background: var(--c-navy); }
+    .product-card:hover .product-num,
+    .product-card:hover .product-link { color: var(--c-accent2); }
+    .product-card:hover .product-name { color: #fff; }
+    .product-card:hover .product-desc { color: rgba(255,255,255,0.55); }
+    .product-num { font-size: 11px; font-weight: 700; color: var(--c-accent); letter-spacing: 0.1em; transition: color 0.2s; }
+    .product-name { font-family: var(--f-display); font-size: 15px; font-weight: 700; color: var(--c-navy); line-height: 1.3; transition: color 0.2s; }
+    .product-desc { font-size: 13px; color: var(--c-muted); line-height: 1.65; flex: 1; transition: color 0.2s; }
+    .product-link { font-size: 12px; font-weight: 600; color: var(--c-accent); letter-spacing: 0.04em; transition: color 0.2s; }
+
+    /* ── PROJECTS ── */
+    .projects-section { background: #fff; }
+    .projects-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 48px; }
+    .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+    .project-card { position: relative; overflow: hidden; aspect-ratio: 4/3; cursor: pointer; }
+    .project-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+    .project-card:hover img { transform: scale(1.05); }
+    .project-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(13,27,46,0.88) 0%, transparent 55%);
+      display: flex; flex-direction: column; justify-content: flex-end; padding: 28px;
+    }
+    .project-cat { font-size: 11px; font-weight: 600; color: var(--c-accent2); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 6px; }
+    .project-name { font-family: var(--f-display); font-size: 17px; font-weight: 700; color: #fff; }
+
+    /* ── TECHNOLOGY ── */
+    .tech-section { background: var(--c-navy); }
+    .tech-section .section-eyebrow { color: var(--c-accent2); }
+    .tech-section .section-title { color: #fff; }
+    .tech-section .section-title em { color: var(--c-accent2); }
+    .tech-section .section-sub { color: rgba(255,255,255,0.5); }
+    .tech-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; margin-top: 56px; }
+    .tech-stack {
+      display: flex; flex-direction: column; gap: 1px;
+      background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.07);
+    }
+    .tech-item {
+      background: rgba(255,255,255,0.03); padding: 28px 30px;
+      display: flex; gap: 20px; align-items: flex-start;
+      transition: background 0.2s;
+    }
+    .tech-item:hover { background: rgba(255,255,255,0.07); }
+    .tech-item-num { font-size: 11px; font-weight: 700; color: var(--c-accent2); letter-spacing: 0.08em; min-width: 30px; padding-top: 2px; }
+    .tech-item-title { font-family: var(--f-display); font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+    .tech-item-desc { font-size: 13px; color: rgba(255,255,255,0.45); line-height: 1.65; }
+    .tech-metrics {
+      display: flex; flex-direction: column; gap: 1px;
+      background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.07);
+    }
+    .tech-metric {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 22px 28px; border-bottom: 1px solid rgba(255,255,255,0.06);
+      background: rgba(255,255,255,0.03);
+    }
+    .tech-metric:last-child { border-bottom: none; }
+    .tech-metric-label { font-size: 13px; color: rgba(255,255,255,0.45); }
+    .tech-metric-val { font-family: var(--f-display); font-size: 22px; font-weight: 800; color: var(--c-accent2); }
+
+    /* ── CAREERS ── */
+    .careers-section { background: var(--c-bg2); }
+    .careers-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .careers-pillars {
+      display: flex; flex-direction: column; gap: 1px;
+      background: var(--c-border); border: 1px solid var(--c-border); margin-top: 36px;
+    }
+    .career-pillar { background: #fff; padding: 26px 28px; display: flex; gap: 18px; align-items: flex-start; }
+    .career-pillar-num { font-size: 11px; font-weight: 700; color: var(--c-accent); letter-spacing: 0.08em; min-width: 28px; padding-top: 3px; }
+    .career-pillar-title { font-family: var(--f-display); font-size: 14px; font-weight: 700; color: var(--c-navy); margin-bottom: 5px; }
+    .career-pillar-desc { font-size: 13px; color: var(--c-muted); line-height: 1.65; }
+    .careers-images { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
+    .team-img { aspect-ratio: 4/3; overflow: hidden; }
+    .team-img img { width: 100%; height: 100%; object-fit: cover; }
+
+    /* ── CTA BANNER ── */
+    .cta-section { background: var(--c-accent); padding: 80px 48px; text-align: center; }
+    .cta-section .section-eyebrow { color: rgba(255,255,255,0.65); }
+    .cta-section .section-title { color: #fff; }
+    .cta-section .section-title em { color: #fff; }
+    .cta-section-sub { font-size: 16px; color: rgba(255,255,255,0.7); margin-top: 12px; max-width: 480px; margin-left: auto; margin-right: auto; line-height: 1.7; }
+    .btn-white {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 15px 36px; font-size: 14px; font-weight: 700;
+      background: #fff; color: var(--c-accent);
+      border-radius: var(--radius); text-decoration: none; margin-top: 36px;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-white:hover { background: var(--c-navy); color: #fff; transform: translateY(-1px); }
+
+    /* ── FOOTER ── */
+    footer { background: var(--c-navy); padding: 72px 48px 40px; }
+    .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 56px; margin-bottom: 56px; }
+    .footer-logo img { height: 30px; margin-bottom: 14px; display: block; }
+    .footer-tagline { font-size: 13px; color: rgba(255,255,255,0.45); line-height: 1.75; max-width: 260px; margin-bottom: 24px; }
+    .footer-social { display: flex; gap: 10px; }
+    .social-btn {
+      width: 36px; height: 36px; border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,0.4); text-decoration: none; font-size: 12px; font-weight: 700;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .social-btn:hover { border-color: var(--c-accent2); color: var(--c-accent2); }
+    .footer-heading { font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.9); margin-bottom: 18px; }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-links a { font-size: 13px; color: rgba(255,255,255,0.45); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: #fff; }
+    .footer-contact-label { font-size: 10.5px; color: rgba(255,255,255,0.3); letter-spacing: 0.08em; margin-bottom: 1px; }
+    .footer-contact-item { margin-bottom: 12px; }
+    .footer-contact-item a { font-size: 13px; color: rgba(255,255,255,0.5); text-decoration: none; }
+    .footer-address { font-size: 13px; color: rgba(255,255,255,0.4); line-height: 1.75; margin-bottom: 16px; }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08); padding-top: 28px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .footer-copy { font-size: 12px; color: rgba(255,255,255,0.25); }
+    .footer-privacy { font-size: 12px; color: rgba(255,255,255,0.25); text-decoration: none; }
+    .footer-privacy:hover { color: rgba(255,255,255,0.6); }
+
+    /* ── DIVIDER ── */
+    .divider { height: 1px; background: var(--c-border); margin: 0 48px; }
+
+    /* ── EDIT BADGE ── */
+    .edit-notice {
+      position: fixed; bottom: 16px; right: 16px; z-index: 9999;
+      background: var(--c-accent); color: #fff;
+      padding: 9px 16px; border-radius: var(--radius);
+      font-size: 11px; font-weight: 700; letter-spacing: 0.05em;
+      box-shadow: 0 4px 16px rgba(200,39,30,0.35);
+    }
+  </style>
+</head>
+<body>
+
+<div class="edit-notice">✏️ REVIEW DRAFT</div>
+
+<!-- ══ NAV ══ -->
+<nav>
+  <a class="nav-logo" href="#">
+    <img src="https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/isibds-logo.png" alt="ISI Building Solutions" />
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#products">Products &amp; Solutions</a></li>
+    <li><a href="#industry">Industry Specific</a></li>
+    <li><a href="#projects">Portfolios</a></li>
+    <li><a href="#tech">Technology</a></li>
+    <li><a href="#careers">Careers</a></li>
+    <li><a href="#contact">Contact Us</a></li>
+  </ul>
+  <div class="nav-right">
+    <span class="nav-lang"><span>EN</span> | 中文</span>
+    <a class="nav-cta" href="#">Download</a>
+  </div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section class="hero" id="home">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-content">
+    <span class="hero-eyebrow">ISI Building Solutions</span>
+    <h1>Leader in<br /><em>Pre-Engineered</em><br />Building &amp;<br />Steel Structures</h1>
+    <p class="hero-sub">Pioneering prefabrication to transform the construction industry for safer working conditions and environmental sustainability.</p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="#projects">Explore Projects</a>
+      <a class="btn-outline" href="#contact">Contact Us</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">1,000<span>+</span></div>
+        <div class="stat-label">Projects Completed</div>
+      </div>
+      <div>
+        <div class="stat-num">12<span>+</span></div>
+        <div class="stat-label">Years of Innovation</div>
+      </div>
+      <div>
+        <div class="stat-num">300<span>+</span></div>
+        <div class="stat-label">Team Members</div>
+      </div>
+      <div class="stat-badge">
+        <div class="stat-badge-icon">ISO</div>
+        <div>
+          <div style="font-size:13px;font-weight:700;color:#fff;">9001:2015</div>
+          <div class="stat-label">Certified</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ VALUES ══ -->
+<section class="values-section" id="values">
+  <div class="section-eyebrow">VALUES — Our Foundation</div>
+  <h2 class="section-title">Our Core <em>Values</em></h2>
+  <div class="values-grid">
+    <div class="value-card">
+      <div class="value-num">01</div>
+      <div class="value-title">Innovation</div>
+      <div class="value-desc">Driving change through cutting-edge prefabrication technology.</div>
+    </div>
+    <div class="value-card">
+      <div class="value-num">02</div>
+      <div class="value-title">Striving</div>
+      <div class="value-desc">Pursuing excellence in every bolt, beam, and building we create.</div>
+    </div>
+    <div class="value-card">
+      <div class="value-num">03</div>
+      <div class="value-title">Integrity</div>
+      <div class="value-desc">Building trust through transparency and reliable delivery.</div>
+    </div>
+    <div class="value-card">
+      <div class="value-num">04</div>
+      <div class="value-title">Growing Together</div>
+      <div class="value-desc">Empowering communities and advancing Cambodia's development.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ COMPANY PROFILE ══ -->
+<section class="profile-section" id="about">
+  <div class="profile-inner">
+    <div>
+      <div class="section-eyebrow">Company Profile</div>
+      <h2 class="section-title">Leader in <em>Pre-engineered</em> Buildings</h2>
+      <p class="section-sub">We have successfully completed over 1,000 projects, ranging from essential industrial hubs like the ISI Industrial Parks to iconic landmarks such as the AEON Mall Parking Structure. Our expertise demonstrates a superior ability to deliver high-performance steel solutions tailored to the diverse and complex requirements of your business and investment.</p>
+      <div class="profile-tags">
+        <div class="profile-tag"><strong>ISO</strong> 9001:2015 Certified</div>
+        <div class="profile-tag"><strong>E</strong> Expert Engineers</div>
+        <div class="profile-tag"><strong>S</strong> Sustainability</div>
+      </div>
+      <div class="profile-stats">
+        <div>
+          <div class="p-stat-num">1,000<span>+</span></div>
+          <div class="p-stat-label">Projects</div>
+        </div>
+        <div>
+          <div class="p-stat-num">12<span>+</span></div>
+          <div class="p-stat-label">Years</div>
+        </div>
+        <div>
+          <div class="p-stat-num">300<span>+</span></div>
+          <div class="p-stat-label">Team</div>
+        </div>
+      </div>
+      <div style="margin-top:32px;">
+        <a class="btn-primary" href="#about">Learn More About Us</a>
+      </div>
+    </div>
+    <div class="profile-right">
+      <div class="profile-img-wrap">
+        <img src="https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/Homes-10.jpg" alt="ISI Building Solutions" />
+      </div>
+      <div class="iso-badge">ISO<br />9001:2015<br />Certified</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ══ PRODUCTS ══ -->
+<section class="products-section" id="products">
+  <div class="products-header">
+    <div>
+      <div class="section-eyebrow">What We Do</div>
+      <h2 class="section-title">Products &amp; <em>Solutions</em></h2>
+    </div>
+    <p class="section-sub" style="max-width:340px;">Offering practical solutions that streamline steel structure design and build process, improving manufacturing productivity, and providing superior quality buildings.</p>
+  </div>
+  <div class="products-grid">
+    <a class="product-card" href="#">
+      <div class="product-num">01</div>
+      <div class="product-name">ISI PEB</div>
+      <div class="product-desc">Complete pre-engineered building systems with standing seam roofing, wall cladding, and accessories for industrial and commercial applications.</div>
+      <div class="product-link">Learn More →</div>
+    </a>
+    <a class="product-card" href="#">
+      <div class="product-num">02</div>
+      <div class="product-name">Architectural Steel Structure</div>
+      <div class="product-desc">Specialized steel structural systems for office buildings, shopping malls, showrooms, parking structures, and mixed-use developments.</div>
+      <div class="product-link">Learn More →</div>
+    </a>
+    <a class="product-card" href="#">
+      <div class="product-num">03</div>
+      <div class="product-name">ISI TRUSS</div>
+      <div class="product-desc">Comprehensive roofing systems designed for durability, aesthetic appeal, and high performance in tropical climates.</div>
+      <div class="product-link">Learn More →</div>
+    </a>
+    <a class="product-card" href="#">
+      <div class="product-num">04</div>
+      <div class="product-name">ISI Greenhouse</div>
+      <div class="product-desc">High-quality pre-engineered structural solutions tailored for modern agriculture, focusing on durability, climate control, and rapid assembly.</div>
+      <div class="product-link">Learn More →</div>
+    </a>
+    <a class="product-card" href="#">
+      <div class="product-num">05</div>
+      <div class="product-name">ISI Home</div>
+      <div class="product-desc">Innovative housing solutions blending traditional Khmer aesthetics with modern steel engineering for safe, affordable living.</div>
+      <div class="product-link">Learn More →</div>
+    </a>
+  </div>
+</section>
+
+<!-- ══ PROJECTS ══ -->
+<section class="projects-section" id="projects">
+  <div class="projects-header">
+    <div>
+      <div class="section-eyebrow">Selected Work</div>
+      <h2 class="section-title">Featured <em>Projects</em></h2>
+    </div>
+    <a class="btn-outline-dark" href="#">View All Projects</a>
+  </div>
+  <div class="projects-grid">
+    <div class="project-card">
+      <img src="https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-e-c/images/project-sunfair.jpg" alt="Sunfair Garment Factory" />
+      <div class="project-overlay">
+        <div class="project-cat">Pre-Engineered Buildings</div>
+        <div class="project-name">Sunfair Garment Factory</div>
+      </div>
+    </div>
+    <div class="project-card">
+      <img src="https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-e-c/images/project-khb.jpg" alt="Khmer Beverages" />
+      <div class="project-overlay">
+        <div class="project-cat">Pre-Engineered Buildings</div>
+        <div class="project-name">Khmer Beverages</div>
+      </div>
+    </div>
+    <div class="project-card">
+      <img src="https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-e-c/images/project-aeon-mall.jpg" alt="AEON Mall Meanchey" />
+      <div class="project-overlay">
+        <div class="project-cat">Architectural Steel Structure</div>
+        <div class="project-name">AEON Mall Meanchey</div>
+      </div>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:44px;">
+    <a class="btn-outline-dark" href="#">View All Projects</a>
+  </div>
+</section>
+
+<!-- ══ TECHNOLOGY ══ -->
+<section class="tech-section" id="tech">
+  <div class="section-eyebrow">TECHNOLOGY — Innovation Engine</div>
+  <h2 class="section-title">Software &amp; <em>Technology</em></h2>
+  <p class="section-sub">Utilizing practical technologies to improve productivity and accelerate toward a sustainable future. We integrate advanced software solutions in design and manufacturing to ensure precision and efficiency.</p>
+  <div class="tech-inner">
+    <div>
+      <div style="font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:16px;">Digital Workflow Stack</div>
+      <div class="tech-stack">
+        <div class="tech-item">
+          <div class="tech-item-num">01</div>
+          <div>
+            <div class="tech-item-title">BIM &amp; 3D Modeling</div>
+            <div class="tech-item-desc">Full building information modeling for precision engineering and clash detection.</div>
+          </div>
+        </div>
+        <div class="tech-item">
+          <div class="tech-item-num">02</div>
+          <div>
+            <div class="tech-item-title">Automated Manufacturing</div>
+            <div class="tech-item-desc">CNC-driven fabrication lines ensuring consistent quality at scale.</div>
+          </div>
+        </div>
+        <div class="tech-item">
+          <div class="tech-item-num">03</div>
+          <div>
+            <div class="tech-item-title">Project Analytics</div>
+            <div class="tech-item-desc">Real-time data dashboards for project tracking and resource optimization.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="tech-metrics">
+        <div class="tech-metric">
+          <div class="tech-metric-label">Model Coordination</div>
+          <div class="tech-metric-val">99.2%</div>
+        </div>
+        <div class="tech-metric">
+          <div class="tech-metric-label">Fabrication Precision</div>
+          <div class="tech-metric-val">±1.5mm</div>
+        </div>
+        <div class="tech-metric">
+          <div class="tech-metric-label">Delivery Visibility</div>
+          <div class="tech-metric-val">24/7</div>
+        </div>
+      </div>
+      <div style="margin-top:24px;">
+        <a class="btn-primary" href="#">Discover Our Tech</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CAREERS ══ -->
+<section class="careers-section" id="careers">
+  <div class="careers-inner">
+    <div>
+      <div class="section-eyebrow">People &amp; Culture</div>
+      <h2 class="section-title">Fostering Harmony, <em>Promoting Growth</em></h2>
+      <p class="section-sub">At ISI Building Solutions, we believe our people are our greatest asset. We cultivate a culture of harmony, respect, and continuous learning while driving professional excellence.</p>
+      <div class="careers-pillars">
+        <div class="career-pillar">
+          <div class="career-pillar-num">01</div>
+          <div>
+            <div class="career-pillar-title">Career Development</div>
+            <div class="career-pillar-desc">Continuous training programs and mentorship from senior engineers.</div>
+          </div>
+        </div>
+        <div class="career-pillar">
+          <div class="career-pillar-num">02</div>
+          <div>
+            <div class="career-pillar-title">Inclusive Environment</div>
+            <div class="career-pillar-desc">A workplace where every voice plays a part in our success.</div>
+          </div>
+        </div>
+        <div class="career-pillar">
+          <div class="career-pillar-num">03</div>
+          <div>
+            <div class="career-pillar-title">Growth Opportunities</div>
+            <div class="career-pillar-desc">Clear pathways for professional advancement and leadership.</div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:28px;">
+        <a class="btn-primary" href="#">Join Our Team</a>
+      </div>
+    </div>
+    <div class="careers-images">
+      <div class="team-img"><img src="https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/team-engineering.jpg" alt="Engineering Team" /></div>
+      <div class="team-img"><img src="https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/team-finance.jpg" alt="Finance & Accounting Team" /></div>
+      <div class="team-img"><img src="https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/team-project-management.jpg" alt="Project Management Team" /></div>
+      <div class="team-img"><img src="https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/team-sales.jpg" alt="Project Sales Team" /></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA ══ -->
+<section class="cta-section" id="contact">
+  <div class="section-eyebrow">Let's Build Together</div>
+  <h2 class="section-title">Create and Build <em>Better With Us</em></h2>
+  <p class="cta-section-sub">Whether you are a client, partner, or future team member — join us in our mission to revolutionize the construction industry.</p>
+  <a class="btn-white" href="mailto:info@isibds.com">Partner With Us</a>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <img src="https://isibds.koompi.cloud/white.png" alt="ISI Building Solutions" style="height:28px;margin-bottom:14px;display:block;" />
+      <div class="footer-tagline">A Leader in Pre-engineered Building, Specialist in Steel Structure, and Pioneer in Prefabrication.</div>
+      <div class="footer-social">
+        <a class="social-btn" href="https://www.facebook.com/isibds" target="_blank">f</a>
+        <a class="social-btn" href="https://www.linkedin.com/company/67989697/" target="_blank">in</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-heading">Navigation</div>
+      <ul class="footer-links">
+        <li><a href="#">About</a></li>
+        <li><a href="#">Products &amp; Solutions</a></li>
+        <li><a href="#">Portfolios</a></li>
+        <li><a href="#">Technology</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-heading">Contact Info</div>
+      <div class="footer-address">ISI Park National Road 2, Phum Kraing Sbov, Preah Puth Commune, Kandal Steung District, Kandal Province, Cambodia</div>
+      <div class="footer-contact-item">
+        <div class="footer-contact-label">KH / ENG</div>
+        <a href="tel:+85511919202">+855 (0) 11 919 202</a>
+      </div>
+      <div class="footer-contact-item">
+        <div class="footer-contact-label">CH</div>
+        <a href="tel:+85511919212">+855 (0) 11 919 212</a>
+      </div>
+      <div class="footer-contact-item">
+        <div class="footer-contact-label">Email</div>
+        <a href="mailto:info@isibds.com">info@isibds.com</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-heading">Inquiry</div>
+      <p style="font-size:13px;color:rgba(255,255,255,0.4);margin-bottom:16px;line-height:1.7;">Ready to start your next industrial project?</p>
+      <a class="btn-primary" href="mailto:info@isibds.com">Get Expert Advice</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2026 ISI Building Solutions. All Rights Reserved.</span>
+    <a class="footer-privacy" href="#">Privacy Policy</a>
+  </div>
+</footer>
+
+</body>
+</html>

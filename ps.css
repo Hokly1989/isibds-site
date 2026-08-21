@@ -1,0 +1,65 @@
+/* ── PRODUCTS & SOLUTIONS PAGE ── */
+.ps-hero-sec{padding-top:72px}
+.ps-hero{position:relative;height:50vh;min-height:400px;overflow:hidden}
+.ps-hero-img{position:absolute;inset:0;background:url('https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/building-system-main.jpg') center/cover}
+.ps-hero-ov{position:absolute;inset:0;background:rgba(10,21,36,.8)}
+.ps-hero-in{position:relative;z-index:10;height:100%;display:flex;align-items:center}
+.ps-hero h1{font-family:var(--f-head);font-size:1.875rem;font-weight:700;color:#fff;line-height:1.25;letter-spacing:-.025em;max-width:48rem;text-transform:uppercase}
+.ps-hero p{color:rgba(255,255,255,.5);font-size:18px;margin-top:24px;max-width:42rem;line-height:1.65}
+@media(max-width:1023px){.ps-hero h1{font-size:3rem}}
+@media(max-width:767px){.ps-hero h1{font-size:2.25rem}.ps-hero p{font-size:16px}}
+
+.ps-body{padding:112px 0;background:#F8F9FA}
+.pstack{display:flex;flex-direction:column;gap:128px}
+
+.pblock{display:grid;grid-template-columns:repeat(12,1fr);gap:64px;align-items:center;scroll-margin-top:96px}
+.pb-txt{grid-column:1/span 6;min-height:440px;display:flex;flex-direction:column;justify-content:center}
+.pb-img{grid-column:7/span 6}
+.pblock.rev .pb-txt{grid-column:7/span 6;text-align:right}
+.pblock.rev .pb-img{grid-column:1/span 6;grid-row:1}
+@media(max-width:1023px){
+  .pblock{display:block}.pstack{gap:80px}
+  .pb-txt{min-height:0;margin-bottom:48px;text-align:left!important}
+  .pblock.rev .pb-txt{text-align:left}
+}
+
+.pb-numrow{display:flex;align-items:center;gap:16px;margin-bottom:16px}
+.pblock.rev .pb-numrow{justify-content:flex-end}
+@media(max-width:1023px){.pblock.rev .pb-numrow{justify-content:flex-start}}
+.pb-num{font-size:2.25rem;font-weight:900;color:rgba(212,98,43,.4);letter-spacing:-.05em;line-height:1}
+.pb-dash{width:32px;height:1px;background:rgba(212,98,43,.2)}
+.pb-txt h3{font-family:var(--f-head);font-size:2.25rem;font-weight:700;color:var(--primary);letter-spacing:-.025em;margin-bottom:24px;text-transform:uppercase;line-height:1.2}
+@media(max-width:767px){.pb-txt h3{font-size:1.75rem}}
+.pb-desc{color:var(--steel);font-size:18px;line-height:1.65;margin-bottom:40px}
+
+.kf-wrap{display:grid;grid-template-columns:1fr 1fr;column-gap:32px;row-gap:16px}
+@media(max-width:639px){.kf-wrap{grid-template-columns:1fr}}
+.kf-label{grid-column:1/-1;color:var(--accent);font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;margin-bottom:8px}
+.kf-item{display:flex;align-items:flex-start;gap:12px}
+.pblock.rev .kf-item{flex-direction:row-reverse}
+@media(max-width:1023px){.pblock.rev .kf-item{flex-direction:row}}
+.kf-item .dot{width:6px;height:6px;background:var(--accent);flex-shrink:0;margin-top:8px}
+.kf-item .txt{color:var(--steel);font-size:15px;font-weight:500;line-height:1.35}
+.pb-btn{margin-top:32px}
+
+.pb-imgwrap{position:relative}
+.pb-frame{height:440px;overflow:hidden;background:#F1F5F9}
+.pb-frame img{width:100%;height:100%;object-fit:cover}
+.pb-arrows{position:absolute;bottom:24px;right:24px;display:flex;gap:8px;z-index:10}
+.pblock.rev .pb-arrows{right:auto;left:24px}
+.pb-arrows button{width:48px;height:48px;background:rgba(255,255,255,.4);color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 15px -3px rgba(0,0,0,.1);transition:background .3s}
+.pb-arrows button:hover{background:var(--accent)}
+.pb-count{position:absolute;top:24px;left:24px;font-weight:700;color:#fff;font-size:12px;letter-spacing:.1em;text-shadow:0 1px 3px rgba(0,0,0,.4)}
+.pblock.rev .pb-count{left:auto;right:24px}
+.pb-offset{position:absolute;bottom:-24px;right:-24px;width:100%;height:100%;border:2px solid rgba(212,98,43,.1);z-index:-1}
+.pblock.rev .pb-offset{right:auto;left:-24px}
+
+.ps-cta{padding:80px 0;background:var(--primary-dark);color:#fff}
+.ps-cta-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:32px;align-items:center}
+.ps-cta-l{grid-column:span 7}
+.ps-cta-r{grid-column:span 5;display:flex;gap:16px;justify-content:flex-end}
+@media(max-width:1023px){.ps-cta-grid{display:block}.ps-cta-l{margin-bottom:32px}.ps-cta-r{justify-content:flex-start;flex-wrap:wrap}}
+.ps-cta h2{font-family:var(--f-head);font-size:2.25rem;font-weight:700;line-height:1.2;letter-spacing:-.025em}
+@media(max-width:767px){.ps-cta h2{font-size:1.75rem}}
+.ps-cta p{color:rgba(255,255,255,.45);font-size:16px;line-height:1.65;margin-top:16px;max-width:32rem}
+.ps-cta .btn-a,.ps-cta .btn-o{padding:16px 32px}

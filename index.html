@@ -58,102 +58,79 @@
 
     /* ── HERO ── */
     .hero {
-      min-height: 85vh;
-      display: flex; align-items: flex-end;
-      padding: 0;
+      min-height: 92vh;
+      position: relative; overflow: hidden;
       background-image: url('https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/building-system-main.jpg');
       background-color: #0d1b2e;
       background-size: cover;
       background-position: center top;
-      position: relative; overflow: hidden;
+      display: flex; flex-direction: column; justify-content: space-between;
     }
     .hero::before {
       content: ''; position: absolute; inset: 0;
       background: linear-gradient(to right,
-        rgba(8,15,30,0.88) 0%,
-        rgba(8,15,30,0.70) 40%,
-        rgba(8,15,30,0.30) 100%);
-      pointer-events: none;
+        rgba(8,15,30,0.85) 0%,
+        rgba(8,15,30,0.60) 45%,
+        rgba(8,15,30,0.20) 100%);
+      pointer-events: none; z-index: 1;
     }
     .hero::after {
       content: ''; position: absolute; left: 0; top: 0; bottom: 0;
-      width: 3px; background: var(--c-accent);
+      width: 3px; background: var(--c-accent); z-index: 2;
     }
     .hero-grid-bg { display: none; }
-    .hero-inner {
-      position: relative; width: 100%;
-      display: grid; grid-template-columns: 1fr 1fr;
-      align-items: flex-end;
-      padding: 100px 64px 60px;
-      gap: 40px;
+    .hero-top {
+      position: relative; z-index: 2;
+      padding: 120px 64px 0;
+      max-width: 520px;
     }
-    .hero-content { max-width: 500px; }
     .hero-eyebrow {
       display: flex; align-items: center; gap: 12px;
-      font-size: 10.5px; font-weight: 700; letter-spacing: 0.2em;
-      text-transform: uppercase; color: var(--c-accent); margin-bottom: 18px;
+      font-size: 10px; font-weight: 700; letter-spacing: 0.22em;
+      text-transform: uppercase; color: var(--c-accent); margin-bottom: 20px;
     }
     .hero-eyebrow::before {
-      content: ''; display: block; width: 24px; height: 2px; background: var(--c-accent); flex-shrink: 0;
+      content: ''; display: block; width: 24px; height: 2px;
+      background: var(--c-accent); flex-shrink: 0;
     }
     .hero h1 {
-      font-family: var(--f-display); font-size: clamp(36px, 4vw, 56px);
+      font-family: var(--f-display); font-size: clamp(38px, 4.2vw, 60px);
       font-weight: 900; line-height: 1.1; letter-spacing: -0.015em;
-      color: #fff; margin-bottom: 16px;
+      color: #fff; margin-bottom: 18px;
     }
     .hero h1 em { font-style: normal; color: var(--c-accent); }
     .hero-sub {
-      font-size: 14px; color: rgba(255,255,255,0.5); max-width: 400px;
-      line-height: 1.75; margin-bottom: 32px;
+      font-size: 14px; color: rgba(255,255,255,0.5);
+      line-height: 1.75; margin-bottom: 32px; max-width: 400px;
     }
-    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
-    .btn-primary {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 12px 24px; font-size: 13.5px; font-weight: 600;
-      background: var(--c-accent); color: #fff; border-radius: var(--radius);
-      text-decoration: none; transition: background 0.2s, transform 0.15s;
+    .hero-actions { display: flex; gap: 12px; }
+    .hero-bottom {
+      position: relative; z-index: 2;
+      display: flex; justify-content: flex-end;
+      padding: 0 64px 56px;
     }
-    .btn-primary:hover { background: var(--c-accent2); transform: translateY(-1px); }
-    .btn-outline {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 12px 24px; font-size: 13.5px; font-weight: 600;
-      border: 1.5px solid rgba(255,255,255,0.3); color: #fff;
-      border-radius: var(--radius); text-decoration: none;
-      transition: border-color 0.2s, background 0.2s;
-    }
-    .btn-outline:hover { border-color: rgba(255,255,255,0.7); background: rgba(255,255,255,0.06); }
-    .btn-outline-dark {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 12px 24px; font-size: 13.5px; font-weight: 600;
-      border: 1.5px solid var(--c-border); color: var(--c-navy);
-      border-radius: var(--radius); text-decoration: none;
-      transition: border-color 0.2s, background 0.2s;
-    }
-    .btn-outline-dark:hover { border-color: var(--c-accent); color: var(--c-accent); }
-
-    /* Hero Stats — right side floating, 2x2, no box border */
     .hero-stats {
       display: grid; grid-template-columns: 1fr 1fr;
-      gap: 0; align-self: flex-end;
+      column-gap: 0; row-gap: 28px;
     }
     .hero-stats .stat-item {
-      padding: 16px 32px;
-      border-left: 1px solid rgba(255,255,255,0.15);
+      padding: 0 40px;
+      border-left: 1px solid rgba(255,255,255,0.18);
     }
     .stat-num {
-      font-family: var(--f-display); font-size: 36px; font-weight: 900;
+      font-family: var(--f-display); font-size: 38px; font-weight: 900;
       color: #fff; letter-spacing: -0.02em; line-height: 1;
     }
     .stat-label {
       font-size: 10px; font-weight: 700; color: rgba(255,255,255,0.38);
-      letter-spacing: 0.12em; text-transform: uppercase; margin-top: 7px;
+      letter-spacing: 0.14em; text-transform: uppercase; margin-top: 6px;
     }
     .stat-badge { display: flex; align-items: center; gap: 10px; }
     .stat-badge-icon {
-      width: 36px; height: 36px; border-radius: 50%; flex-shrink: 0;
+      width: 34px; height: 34px; border-radius: 50%; flex-shrink: 0;
       background: rgba(232,97,42,0.15); border: 1.5px solid var(--c-accent);
       display: flex; align-items: center; justify-content: center;
-      font-size: 8px; font-weight: 800; color: var(--c-accent);
+      font-size: 7.5px; font-weight: 800; color: var(--c-accent);
     }
 
     /* ── SECTION BASE ── */
@@ -374,18 +351,20 @@
 <!-- ══ HERO ══ -->
 <section class="hero" id="home">
   <div class="hero-grid-bg"></div>
-  <div class="hero-inner">
-    <!-- Left: text -->
-    <div class="hero-content">
-      <span class="hero-eyebrow">ISI Building Solutions</span>
-      <h1>Leader in<br /><em>Pre-Engineered</em><br />Building &amp;<br />Steel Structures</h1>
-      <p class="hero-sub">Pioneering prefabrication to transform the construction industry for safer working conditions and environmental sustainability.</p>
-      <div class="hero-actions">
-        <a class="btn-primary" href="#projects">Explore Projects →</a>
-        <a class="btn-outline" href="#contact">Contact Us</a>
-      </div>
+
+  <!-- TOP: headline left -->
+  <div class="hero-top">
+    <span class="hero-eyebrow">ISI Building Solutions</span>
+    <h1>Leader in<br /><em>Pre-Engineered</em><br />Building &amp;<br />Steel Structures</h1>
+    <p class="hero-sub">Pioneering prefabrication to transform the construction industry for safer working conditions and environmental sustainability.</p>
+    <div class="hero-actions">
+      <a class="btn-primary" href="#projects">Explore Projects →</a>
+      <a class="btn-outline" href="#contact">Contact Us</a>
     </div>
-    <!-- Right: stats floating 2x2 -->
+  </div>
+
+  <!-- BOTTOM: stats pinned bottom-right -->
+  <div class="hero-bottom">
     <div class="hero-stats">
       <div class="stat-item">
         <div class="stat-num">1000+</div>

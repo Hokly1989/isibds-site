@@ -48,18 +48,13 @@ nav{position:fixed;top:0;width:100%;z-index:50;background:#fff;box-shadow:0 4px 
 .dd{position:static;align-self:stretch;display:flex;align-items:center}
 .dd>button{height:100%}
 .dd>button svg{transition:transform .2s}
-.dd:hover>button{color:var(--accent)}
-.dd:hover>button svg{transform:rotate(180deg)}
+.dd>button.open svg{transform:rotate(180deg)}
 .dd-menu{
-  position:absolute;top:100%;left:0;right:0;
-  background:#fff;box-shadow:0 12px 24px -8px rgba(15,27,48,.12);
-  padding:24px 0;
+  position:absolute;top:100%;left:0;right:0;background:#fff;
+  box-shadow:0 12px 24px -8px rgba(15,27,48,.12);padding:24px 0;
   opacity:0;visibility:hidden;pointer-events:none;
-  transition:opacity .18s ease,visibility 0s linear .25s;z-index:60}
-.dd:hover .dd-menu{
-  opacity:1;visibility:visible;pointer-events:auto;
-  transition:opacity .18s ease,visibility 0s linear 0s}
-.dd-menu:hover{opacity:1;visibility:visible;pointer-events:auto;transition:none}
+  transition:opacity .18s ease;z-index:60}
+.dd-menu.open{opacity:1;visibility:visible;pointer-events:auto}
 .dd-inner{max-width:1536px;margin:0 auto;padding:0 16px;display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
 @media(min-width:1024px){.dd-inner{padding:0 32px}}
 .dd-item{display:flex;flex-direction:column;padding:24px;border:1px solid var(--slate-200);background:#fff;transition:border-color .2s,box-shadow .2s}
@@ -687,6 +682,34 @@ var observer = new IntersectionObserver(function(entries) {
   });
 }, {threshold: 0.3});
 document.querySelectorAll('.hero-stats,.pstats').forEach(function(el) { observer.observe(el); });
+</script>
+
+
+<script>
+// JS click-toggle dropdowns — closes on outside click, item click, or nav
+(function(){
+  document.querySelectorAll('.dd>button').forEach(function(btn){
+    btn.addEventListener('click',function(e){
+      e.stopPropagation();
+      var menu=btn.nextElementSibling;
+      var isOpen=menu.classList.contains('open');
+      // close all
+      document.querySelectorAll('.dd-menu').forEach(function(m){m.classList.remove('open');});
+      document.querySelectorAll('.dd>button').forEach(function(b){b.classList.remove('open');});
+      if(!isOpen){menu.classList.add('open');btn.classList.add('open');}
+    });
+  });
+  document.querySelectorAll('.dd-item').forEach(function(item){
+    item.addEventListener('click',function(){
+      document.querySelectorAll('.dd-menu').forEach(function(m){m.classList.remove('open');});
+      document.querySelectorAll('.dd>button').forEach(function(b){b.classList.remove('open');});
+    });
+  });
+  document.addEventListener('click',function(){
+    document.querySelectorAll('.dd-menu').forEach(function(m){m.classList.remove('open');});
+    document.querySelectorAll('.dd>button').forEach(function(b){b.classList.remove('open');});
+  });
+})();
 </script>
 </body>
 </html>

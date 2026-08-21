@@ -1,6 +1,35 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Industry Specific Solutions | ISI Building Solutions</title><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="pages.css"/></head><body>
+<title>Industry Specific Solutions | ISI Building Solutions</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="pages.css"/>
+<style>
+.ind-hero-sec{padding-top:72px}
+.ind-hero{position:relative;min-height:340px;display:flex;align-items:center;background:var(--primary-dark);overflow:hidden}
+.ind-hero .gridbg{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:64px 64px}
+.ind-hero .lbar{position:absolute;left:0;top:0;bottom:0;width:4px;background:rgba(212,98,43,.2)}
+.ind-hero .lbar-top{position:absolute;left:0;top:0;height:160px;width:4px;background:var(--accent)}
+.ind-hero .container{position:relative;z-index:10;padding-top:48px;padding-bottom:48px}
+.ind-hero h1{font-family:var(--f-head);font-size:3rem;font-weight:700;color:#fff;line-height:1.2;letter-spacing:-.025em;margin-bottom:20px}
+.ind-hero p{color:rgba(255,255,255,.5);font-size:18px;max-width:42rem;line-height:1.65}
+@media(max-width:767px){.ind-hero h1{font-size:2rem}}
+
+.ind-overview{padding:96px 0;background:#fff}
+.ind-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+@media(max-width:1023px){.ind-cards{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:639px){.ind-cards{grid-template-columns:1fr}}
+
+.icard{border:1px solid var(--slate-200);padding:32px;display:flex;flex-direction:column;transition:border-color .3s,box-shadow .3s;text-decoration:none;color:inherit}
+.icard:hover{border-color:rgba(212,98,43,.4);box-shadow:0 10px 15px -3px rgba(0,0,0,.08)}
+.icard-icon{width:44px;height:44px;background:rgba(212,98,43,.1);color:var(--accent);display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+.icard h3{font-family:var(--f-head);font-size:20px;font-weight:700;color:var(--primary);margin-bottom:10px}
+.icard>p{font-size:14px;color:var(--steel);line-height:1.65;margin-bottom:22px}
+.app-label{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+.app-list-sm{list-style:none;display:flex;flex-direction:column;gap:8px;flex:1;margin-bottom:24px}
+.app-list-sm li{font-size:13.5px;color:var(--primary);padding-left:16px;position:relative;line-height:1.55}
+.app-list-sm li::before{content:'';position:absolute;left:0;top:8px;width:5px;height:5px;background:var(--accent)}
+.icard-more{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:8px;margin-top:auto}
+</style>
+</head><body>
 <div class="edit-badge">REVIEW DRAFT</div>
 <nav><div class="container"><div class="nav-row">
 <a class="nav-logo" href="index.html"><img src="https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/isibds-logo.png" alt="ISI Building Solutions"/></a>
@@ -17,37 +46,96 @@
 <button class="btn-dl">Download <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button></div>
 </div></div></nav>
 <main>
-<section class="phero"><div class="gridbg"></div><div class="lbar"></div><div class="lbar-top"></div>
-<div class="container"><div class="eyebrow"><div class="bar"></div><span>Our Expertise</span></div>
-<h1>Industry Specific Solutions</h1>
-<p>Tailored structural engineering and building systems designed to meet the unique operational requirements of diverse industries.</p>
-</div></section>
+<section class="ind-hero-sec">
+  <div class="ind-hero">
+    <div class="gridbg"></div><div class="lbar"></div><div class="lbar-top"></div>
+    <div class="container">
+      <div class="eyebrow"><div class="bar"></div><span>Our Expertise</span></div>
+      <h1>Industry Specific Solutions</h1>
+      <p>Tailored structural engineering and building systems designed to meet the unique operational requirements of diverse industries.</p>
+    </div>
+  </div>
+</section>
 
-<section><div class="container"><div class="ind-grid"><a class="ind-card" href="#"><div class="ind-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16h.01"/><path d="M16 16h.01"/><path d="M3 19a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8.5a.5.5 0 0 0-.769-.422l-4.462 2.844A.5.5 0 0 1 15 10.5v-2a.5.5 0 0 0-.769-.422L9.77 10.922A.5.5 0 0 1 9 10.5V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2z"/><path d="M8 16h.01"/></svg></div><h3>Manufacturing</h3><p>Purpose-built steel structures for high-volume production environments — from garment lines to automotive assembly.</p>
-<div class="app-label">Applications</div><ul class="apps"><li>Garment and Textile Factory</li><li>Fabric Processing Factory</li><li>Footwear Factory</li><li>Automotive Assembly Plant</li><li>Electronic Factory</li><li>Steel Furniture Factory</li></ul>
-<span class="ind-more">View Products &amp; Solutions <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></a><a class="ind-card" href="#"><div class="ind-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2h8l-1 9H9z"/><path d="M12 11v11"/><path d="M8 22h8"/></svg></div><h3>Food &amp; Beverage</h3><p>Purpose-built steel structures for breweries, beverage production lines, and food processing facilities.</p>
-<div class="app-label">Applications</div><ul class="apps"><li>Brewery Factory</li><li>Beverage Production Factory</li><li>Food Processing Factory</li></ul>
-<span class="ind-more">View Products &amp; Solutions <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></a><a class="ind-card" href="#"><div class="ind-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 17h4V5H2v12h3"/><path d="M20 17h2v-3.34a4 4 0 0 0-1.17-2.83L19 9h-5v8h1"/><circle cx="7.5" cy="17.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg></div><h3>Logistics</h3><p>Purpose-built steel structures for distribution, warehousing, and cold storage — optimized for efficient operations.</p>
-<div class="app-label">Applications</div><ul class="apps"><li>Distribution Center</li><li>Warehouse</li><li>Logistics Center</li><li>Cold Storage</li></ul>
-<span class="ind-more">View Products &amp; Solutions <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></a><a class="ind-card" href="#"><div class="ind-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9.536V7a4 4 0 0 1 4-4h1.5a.5.5 0 0 1 .5.5V5a4 4 0 0 1-4 4 4 4 0 0 0-4 4c0 2 1 3 1 5a5 5 0 0 1-1 3"/><path d="M4 9a5 5 0 0 1 8 4 5 5 0 0 1-8-4"/><path d="M5 21h14"/></svg></div><h3>Agriculture</h3><p>Durable steel structures designed for modern farming — greenhouses, rice mills, animal sheds, and agri-industry facilities.</p>
-<div class="app-label">Applications</div><ul class="apps"><li>Greenhouse</li><li>Rice Mill Factory</li><li>Animal Shed Farm</li><li>Feed Mill Factory</li></ul>
-<span class="ind-more">View Products &amp; Solutions <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></a><a class="ind-card" href="#"><div class="ind-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div><h3>Residential</h3><p>Modern steel roofing and cladding solutions for residential developments — durable, lightweight, and cost-effective.</p>
-<div class="app-label">Applications</div><ul class="apps"><li>Steel Roofing</li><li>Steel Cladding</li><li>ISI Home</li></ul>
-<span class="ind-more">View Products &amp; Solutions <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></a></div></div></section>
+<section class="ind-overview">
+  <div class="container">
+    <div class="ind-cards">
 
-<section class="dl-sec"><div class="container">
-<div class="sec-head" style="margin-bottom:0"><div class="eyebrow"><div class="bar"></div><span>Downloads</span></div>
-<h2 class="sec-title">Solution Brochures</h2></div>
-<div class="dl-grid"><a class="dl-item" href="#"><div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z"/><path d="M14 2v5h5"/><path d="M12 18v-6"/><path d="m9 15 3 3 3-3"/></svg></div><div class="t">Manufacturing Solutions Brochure</div><span class="g">Download <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></a><a class="dl-item" href="#"><div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z"/><path d="M14 2v5h5"/><path d="M12 18v-6"/><path d="m9 15 3 3 3-3"/></svg></div><div class="t">F&amp;B Solutions Brochure</div><span class="g">Download <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></a><a class="dl-item" href="#"><div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z"/><path d="M14 2v5h5"/><path d="M12 18v-6"/><path d="m9 15 3 3 3-3"/></svg></div><div class="t">Logistics Solutions Brochure</div><span class="g">Download <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></a><a class="dl-item" href="#"><div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z"/><path d="M14 2v5h5"/><path d="M12 18v-6"/><path d="m9 15 3 3 3-3"/></svg></div><div class="t">Agri-industry Solutions Brochure</div><span class="g">Download <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></a><a class="dl-item" href="#"><div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7z"/><path d="M14 2v5h5"/><path d="M12 18v-6"/><path d="m9 15 3 3 3-3"/></svg></div><div class="t">Roofing Systems &amp; Solutions Manual</div><span class="g">Download <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></a></div>
-</div></section>
+      <a class="icard" href="industry-manufacturing.html">
+        <div class="icard-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16h.01"/><path d="M16 16h.01"/><path d="M3 19a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8.5a.5.5 0 0 0-.769-.422l-4.462 2.844A.5.5 0 0 1 15 10.5v-2a.5.5 0 0 0-.769-.422L9.77 10.922A.5.5 0 0 1 9 10.5V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2z"/><path d="M8 16h.01"/></svg></div>
+        <h3>Manufacturing</h3>
+        <p>Purpose-built steel structures for high-volume production environments — from garment lines to automotive assembly.</p>
+        <div class="app-label">Applications</div>
+        <ul class="app-list-sm">
+          <li>Garment and Textile Factory</li>
+          <li>Fabric Processing Factory</li>
+          <li>Footwear Factory</li>
+          <li>Automotive Assembly Plant</li>
+          <li>Electronic Factory</li>
+          <li>Steel Furniture Factory</li>
+        </ul>
+        <span class="icard-more">View Solutions <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+      </a>
 
-<section class="cta"><div class="gridbg"></div><div class="container">
-<div class="eyebrow"><div class="bar"></div><span>Custom Solutions</span></div>
-<h2>Need a specialized solution?</h2>
-<p>Our engineering team can customize any of our products to fit your specific industry needs.</p>
-<div class="cta-btns"><a class="btn-a" href="index.html#contact">Let's Discuss Your Project <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div>
-</div></section>
-</main><footer><div class="container">
+      <a class="icard" href="industry-food-beverage.html">
+        <div class="icard-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2h8l-1 9H9z"/><path d="M12 11v11"/><path d="M8 22h8"/></svg></div>
+        <h3>Food &amp; Beverage</h3>
+        <p>Purpose-built steel structures for breweries, beverage production lines, and food processing facilities.</p>
+        <div class="app-label">Applications</div>
+        <ul class="app-list-sm">
+          <li>Brewery Factory</li>
+          <li>Beverage Production Factory</li>
+          <li>Food Processing Factory</li>
+        </ul>
+        <span class="icard-more">View Solutions <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+      </a>
+
+      <a class="icard" href="industry-logistics.html">
+        <div class="icard-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 17h4V5H2v12h3"/><path d="M20 17h2v-3.34a4 4 0 0 0-1.17-2.83L19 9h-5v8h1"/><circle cx="7.5" cy="17.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg></div>
+        <h3>Logistics</h3>
+        <p>Purpose-built steel structures for distribution, warehousing, and cold storage — optimized for efficient operations.</p>
+        <div class="app-label">Applications</div>
+        <ul class="app-list-sm">
+          <li>Distribution Center</li>
+          <li>Warehouse</li>
+          <li>Logistics Center</li>
+          <li>Cold Storage</li>
+        </ul>
+        <span class="icard-more">View Solutions <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+      </a>
+
+      <a class="icard" href="industry-agriculture.html">
+        <div class="icard-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9.536V7a4 4 0 0 1 4-4h1.5a.5.5 0 0 1 .5.5V5a4 4 0 0 1-4 4 4 4 0 0 0-4 4c0 2 1 3 1 5a5 5 0 0 1-1 3"/><path d="M4 9a5 5 0 0 1 8 4 5 5 0 0 1-8-4"/><path d="M5 21h14"/></svg></div>
+        <h3>Agriculture</h3>
+        <p>Durable steel structures designed for modern farming — greenhouses, rice mills, animal sheds, and agri-industry facilities.</p>
+        <div class="app-label">Applications</div>
+        <ul class="app-list-sm">
+          <li>Greenhouse</li>
+          <li>Rice Mill Factory</li>
+          <li>Animal Shed Farm</li>
+          <li>Feed Mill Factory</li>
+        </ul>
+        <span class="icard-more">View Solutions <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+      </a>
+
+      <a class="icard" href="industry-residential.html">
+        <div class="icard-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div>
+        <h3>Residential</h3>
+        <p>Modern steel roofing and cladding solutions for residential developments — durable, lightweight, and cost-effective.</p>
+        <div class="app-label">Applications</div>
+        <ul class="app-list-sm">
+          <li>Steel Roofing</li>
+          <li>Steel Cladding</li>
+          <li>ISI Home</li>
+        </ul>
+        <span class="icard-more">View Solutions <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+      </a>
+
+    </div>
+  </div>
+</section>
+</main>
+<footer><div class="container">
 <div class="f-top">
 <div><img class="f-logo" src="https://isibds.koompi.cloud/white.png" alt="ISI Building Solutions"/>
 <p class="f-tag">A Leader in Pre-engineered Building, Specialist in Steel Structure, and Pioneer in Prefabrication.</p>
@@ -73,4 +161,5 @@
 <a class="btn-d" href="mailto:sales@isibds.com">Get Expert Advice</a></div>
 </div>
 <div class="f-bot"><p>© 2026 ISI Building Solutions. All Rights Reserved.</p><p>Privacy Policy</p></div>
-</div></footer></body></html>
+</div></footer>
+</body></html>

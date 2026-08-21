@@ -44,25 +44,26 @@ nav{position:fixed;top:0;width:100%;z-index:50;background:#fff;box-shadow:0 4px 
 .btn-dl:hover{background:var(--accent-dark)}
 
 /* ─── DROPDOWNS ─── */
-.dd{position:relative}
+.dd{position:static}
 .dd>button svg{transition:transform .2s}
-.dd:hover>button{color:var(--accent)}
 .dd:hover>button svg{transform:rotate(180deg)}
 .dd-menu{
-  position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(8px);
-  background:#fff;border-top:3px solid var(--accent);
-  box-shadow:0 20px 40px -8px rgba(11,23,39,.25);
-  min-width:640px;padding:8px;
-  display:grid;grid-template-columns:1fr 1fr;gap:2px;
-  opacity:0;visibility:hidden;pointer-events:none;transition:opacity .2s,transform .2s;z-index:60}
-.dd:hover .dd-menu{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0)}
-.dd-menu::before{content:'';position:absolute;top:-11px;left:0;right:0;height:11px}
-.dd-item{display:block;padding:14px 16px;transition:background .2s}
-.dd-item:hover{background:#F6F7F9}
-.dd-item .t{font-size:13px;font-weight:700;color:var(--primary);letter-spacing:-.01em;margin-bottom:3px;display:flex;align-items:center;gap:6px;text-transform:none}
+  position:absolute;top:100%;left:0;right:0;
+  background:#fff;box-shadow:0 12px 24px -8px rgba(15,27,48,.12);
+  padding:24px 0;
+  opacity:0;visibility:hidden;pointer-events:none;transition:opacity .2s;z-index:60}
+.dd:hover .dd-menu{opacity:1;visibility:visible;pointer-events:auto}
+.dd-inner{max-width:1536px;margin:0 auto;padding:0 16px;display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+@media(min-width:1024px){.dd-inner{padding:0 32px}}
+.dd-item{display:flex;flex-direction:column;padding:24px;border:1px solid var(--slate-200);background:#fff;transition:border-color .2s,box-shadow .2s}
+.dd-item:hover{border-color:rgba(212,98,43,.4);box-shadow:0 4px 12px -2px rgba(15,27,48,.08)}
+.dd-head{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.dd-icon{width:32px;height:32px;flex-shrink:0;background:rgba(212,98,43,.1);display:flex;align-items:center;justify-content:center;color:var(--accent)}
+.dd-item .t{font-size:15px;font-weight:700;color:var(--primary);letter-spacing:-.01em;text-transform:none;line-height:1.25}
 .dd-item:hover .t{color:var(--accent)}
-.dd-item .d{font-size:12px;color:var(--steel);line-height:1.5;font-weight:400;letter-spacing:0;text-transform:none}
-@media(max-width:1279px){.dd-menu{min-width:520px}}
+.dd-item .d{font-size:13px;color:var(--steel);line-height:1.6;font-weight:400;letter-spacing:0;text-transform:none;margin-bottom:18px;flex:1}
+.dd-item .more{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:6px}
+@media(max-width:1279px){.dd-inner{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:1023px){.nav-links,.lang,.btn-dl{display:none}.nav-row{height:64px}.nav-logo img{height:48px}}
 
 /* ─── HERO ─── */
@@ -309,23 +310,11 @@ footer{background:var(--primary-dark);color:#fff;margin-top:auto}
         <a href="#about">About</a>
         <div class="dd">
           <button>Products &amp; Solutions <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
-          <div class="dd-menu">
-            <a class="dd-item" href="#products"><div class="t">ISI PEB</div><div class="d">Complete pre-engineered building systems for industrial and commercial applications.</div></a>
-            <a class="dd-item" href="#products"><div class="t">Architectural Steel Structure</div><div class="d">Specialized steel structural systems for office buildings, malls, and mixed-use developments.</div></a>
-            <a class="dd-item" href="#products"><div class="t">ISI TRUSS</div><div class="d">Comprehensive roofing systems for durability and high performance in tropical climates.</div></a>
-            <a class="dd-item" href="#products"><div class="t">ISI Greenhouse</div><div class="d">Pre-engineered structural solutions for modern agriculture and sustainable farming.</div></a>
-            <a class="dd-item" href="#products"><div class="t">ISI Home</div><div class="d">Innovative housing blending Khmer aesthetics with modern steel engineering.</div></a>
-          </div>
+          <div class="dd-menu"><div class="dd-inner"><a class="dd-item" href="#products"><div class="dd-head"><div class="dd-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16h.01"/><path d="M16 16h.01"/><path d="M3 19a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8.5a.5.5 0 0 0-.769-.422l-4.462 2.844A.5.5 0 0 1 15 10.5v-2a.5.5 0 0 0-.769-.422L9.77 10.922A.5.5 0 0 1 9 10.5V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2z"/><path d="M8 16h.01"/></svg></div><div class="t">ISI PEB</div></div><div class="d">Complete pre-engineered building systems for industrial and commercial applications.</div><span class="more">Learn More <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></a><a class="dd-item" href="#products"><div class="dd-head"><div class="dd-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 12h4"/><path d="M10 8h4"/><path d="M14 21v-3a2 2 0 0 0-4 0v3"/><path d="M6 10H4a2 2 0 0 0-2 2v7a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2"/><path d="M6 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"/></svg></div><div class="t">Architectural Steel Structure</div></div><div class="d">Specialized steel structural systems for office buildings, malls, and mixed-use developments.</div><span class="more">Learn More <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></a><a class="dd-item" href="#products"><div class="dd-head"><div class="dd-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 9 8H3z"/><path d="M12 11v10"/></svg></div><div class="t">ISI TRUSS</div></div><div class="d">Comprehensive roofing systems for durability and high performance in tropical climates.</div><span class="more">Learn More <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></a><a class="dd-item" href="#products"><div class="dd-head"><div class="dd-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9.536V7a4 4 0 0 1 4-4h1.5a.5.5 0 0 1 .5.5V5a4 4 0 0 1-4 4 4 4 0 0 0-4 4c0 2 1 3 1 5a5 5 0 0 1-1 3"/><path d="M4 9a5 5 0 0 1 8 4 5 5 0 0 1-8-4"/><path d="M5 21h14"/></svg></div><div class="t">ISI Greenhouse</div></div><div class="d">Pre-engineered structural solutions for modern agriculture and sustainable farming.</div><span class="more">Learn More <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></a><a class="dd-item" href="#products"><div class="dd-head"><div class="dd-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div><div class="t">ISI Home</div></div><div class="d">Innovative housing blending Khmer aesthetics with modern steel engineering.</div><span class="more">Learn More <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></a></div></div>
         </div>
         <div class="dd">
           <button>Industry Specific <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
-          <div class="dd-menu">
-            <a class="dd-item" href="#"><div class="t">Manufacturing</div><div class="d">Garment, Textile, Automotive, and Electronic factory solutions.</div></a>
-            <a class="dd-item" href="#"><div class="t">Food &amp; Beverage</div><div class="d">Brewery, Beverage, and Food processing facility systems.</div></a>
-            <a class="dd-item" href="#"><div class="t">Logistics</div><div class="d">Distribution centers, Warehouses, and Cold storage solutions.</div></a>
-            <a class="dd-item" href="#"><div class="t">Agriculture</div><div class="d">Greenhouse, Rice mills, and Agri-industry building systems.</div></a>
-            <a class="dd-item" href="#"><div class="t">Residential</div><div class="d">Steel roofing, cladding, and modern housing solutions.</div></a>
-          </div>
+          <div class="dd-menu"><div class="dd-inner"><a class="dd-item" href="#"><div class="dd-head"><div class="dd-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16h.01"/><path d="M16 16h.01"/><path d="M3 19a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8.5a.5.5 0 0 0-.769-.422l-4.462 2.844A.5.5 0 0 1 15 10.5v-2a.5.5 0 0 0-.769-.422L9.77 10.922A.5.5 0 0 1 9 10.5V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2z"/><path d="M8 16h.01"/></svg></div><div class="t">Manufacturing</div></div><div class="d">Garment, Textile, Automotive, and Electronic factory solutions.</div><span class="more">Learn More <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></a><a class="dd-item" href="#"><div class="dd-head"><div class="dd-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2h8l-1 9H9z"/><path d="M12 11v11"/><path d="M8 22h8"/></svg></div><div class="t">Food &amp; Beverage</div></div><div class="d">Brewery, Beverage, and Food processing facility systems.</div><span class="more">Learn More <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></a><a class="dd-item" href="#"><div class="dd-head"><div class="dd-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 17h4V5H2v12h3"/><path d="M20 17h2v-3.34a4 4 0 0 0-1.17-2.83L19 9h-5v8h1"/><circle cx="7.5" cy="17.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg></div><div class="t">Logistics</div></div><div class="d">Distribution centers, Warehouses, and Cold storage solutions.</div><span class="more">Learn More <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></a><a class="dd-item" href="#"><div class="dd-head"><div class="dd-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9.536V7a4 4 0 0 1 4-4h1.5a.5.5 0 0 1 .5.5V5a4 4 0 0 1-4 4 4 4 0 0 0-4 4c0 2 1 3 1 5a5 5 0 0 1-1 3"/><path d="M4 9a5 5 0 0 1 8 4 5 5 0 0 1-8-4"/><path d="M5 21h14"/></svg></div><div class="t">Agriculture</div></div><div class="d">Greenhouse, Rice mills, and Agri-industry building systems.</div><span class="more">Learn More <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></a><a class="dd-item" href="#"><div class="dd-head"><div class="dd-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></div><div class="t">Residential</div></div><div class="d">Steel roofing, cladding, and modern housing solutions.</div><span class="more">Learn More <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span></a></div></div>
         </div>
         <a href="#projects">Portfolios</a>
         <a href="#tech">Technology</a>

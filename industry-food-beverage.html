@@ -1,5 +1,64 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Food & Beverage Solutions | ISI Building Solutions</title><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/><link rel="stylesheet" href="pages.css"/><link rel="stylesheet" href="ind.css"/></head><body>
+<title>Food &amp; Beverage Solutions | ISI Building Solutions</title><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/><link rel="stylesheet" href="pages.css"/><link rel="stylesheet" href="ind.css"/>
+<style>
+/* Exact structure from saved source */
+.ind-hero-sec{margin-top:72px}
+.ind-hero{position:relative;height:40vh;min-height:300px;overflow:hidden}
+.ind-hero-img{position:absolute;inset:0;background:url('https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-e-c/images/project-hanuman.jpg') center/cover}
+.ind-hero-ov{position:absolute;inset:0;background:rgba(10,21,36,.85)}
+.ind-hero-in{position:relative;z-index:10;height:100%;display:flex;align-items:center}
+.ind-hero h1{font-family:var(--f-head);font-size:2.5rem;font-weight:700;color:#fff;line-height:1.2;letter-spacing:-.01em;text-transform:uppercase;max-width:48rem}
+.ind-hero p{color:rgba(255,255,255,.6);font-size:18px;margin-top:24px;max-width:42rem;line-height:1.65}
+@media(max-width:767px){.ind-hero h1{font-size:2rem}}
+
+/* Main content — exact 12-col grid from source */
+.ind-main{padding:96px 0;background:#fff}
+.ind-cols{display:grid;grid-template-columns:5fr 7fr;gap:64px;align-items:start}
+@media(max-width:1023px){.ind-cols{display:block}}
+
+/* Left: app list */
+.apps-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:24px}
+.apps-eyebrow .bar{width:32px;height:1px;background:var(--accent)}
+.apps-eyebrow span{color:var(--accent);font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase}
+.apps-title{font-family:var(--f-head);font-size:2rem;font-weight:700;color:var(--primary);letter-spacing:-.01em;text-transform:uppercase;margin-bottom:40px;line-height:1.2}
+.apps-list{list-style:none}
+.apps-item{border-bottom:1px solid #F1F5F9}
+.app-trigger{width:100%;display:flex;align-items:center;gap:16px;padding:16px 0;cursor:pointer;background:none;border:none;font-family:var(--f);text-align:left;color:var(--primary);font-size:18px;font-weight:600;transition:color .2s}
+.app-trigger:hover,.app-trigger.active{color:var(--accent)}
+.app-trigger .dot{width:8px;height:8px;flex-shrink:0;background:rgba(15,27,48,.15);transition:background .2s}
+.app-trigger.active .dot{background:var(--accent)}
+
+/* Right: features panel */
+.feat-col{position:sticky;top:96px}
+@media(max-width:1023px){.feat-col{position:static;margin-top:40px}}
+.feat-eyebrow{color:var(--accent);font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;margin-bottom:24px}
+.feat-items{display:flex;flex-direction:column;gap:12px;margin-bottom:32px}
+.feat-row{display:flex;align-items:flex-start;gap:12px}
+.feat-row .dot{width:6px;height:6px;background:var(--accent);flex-shrink:0;margin-top:8px}
+.feat-row .label{font-weight:700;color:var(--primary);font-size:15px}
+.feat-row .desc{color:var(--steel);font-size:15px}
+.feat-photos{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.feat-photos img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.feat-panel{display:none}
+.feat-panel.active{display:block}
+
+/* Projects section */
+.proj-sec{padding:96px 0;background:#F8F9FA}
+.proj-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:24px}
+.proj-eyebrow .bar{width:32px;height:1px;background:var(--accent)}
+.proj-eyebrow span{color:var(--accent);font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase}
+.proj-title{font-family:var(--f-head);font-size:2rem;font-weight:700;color:var(--primary);letter-spacing:-.01em;text-transform:uppercase;margin-bottom:48px}
+.proj-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+@media(max-width:1023px){.proj-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:639px){.proj-grid{grid-template-columns:1fr}}
+.proj-card{position:relative;overflow:hidden;cursor:pointer}
+.proj-card .ar{aspect-ratio:4/3}
+.proj-card img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.proj-card:hover img{transform:scale(1.05)}
+.proj-cap{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,21,36,.75),transparent 50%);display:flex;align-items:flex-end;padding:16px}
+.proj-cap span{color:#fff;font-size:14px;font-weight:700;line-height:1.3}
+</style>
+</head><body>
 <div class="edit-badge">REVIEW DRAFT</div>
 <nav><div class="container"><div class="nav-row">
 <a class="nav-logo" href="index.html"><img src="https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/images/isibds-logo.png" alt="ISI Building Solutions"/></a>
@@ -16,26 +75,88 @@
 <button class="btn-dl">Download <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button></div>
 </div></div></nav>
 <main>
-<section class="ind-hero-sec"><div class="ind-hero">
-<div class="ind-hero-img" style="background-image:url('https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-e-c/images/project-khb.jpg')"></div>
-<div class="ind-hero-ov"></div>
-<div class="ind-hero-in"><div class="container">
-<div class="app-eyebrow"><div class="bar"></div><span>Industry Specific</span></div>
-<h1>Food & Beverage</h1>
-<p>Purpose-built steel structures for breweries, beverage production lines, and food processing facilities.</p>
-</div></div>
-</div></section>
 
-<section class="ind-body"><div class="container"><div class="ind-grid">
-<div><div class="app-eyebrow"><div class="bar"></div><span>Applications</span></div>
-<h2 class="app-h2">Food & Beverage</h2>
-<ul class="app-list"><li class="app-item"><button class="app-btn active" onclick="selectApp(this,'brewery-factory')"><span class="app-dot"></span><span>Brewery Factory</span></button></li><li class="app-item"><button class="app-btn " onclick="selectApp(this,'beverage-production-factory')"><span class="app-dot"></span><span>Beverage Production Factory</span></button></li><li class="app-item"><button class="app-btn " onclick="selectApp(this,'food-processing-factory')"><span class="app-dot"></span><span>Food Processing Factory</span></button></li></ul></div>
-<div><div class="feat-panel" id="feat-brewery-factory"><div class="feat-eyebrow">Key Features</div><ul class="feat-list"><li class="feat-item"><span class="dot"></span><span><span class="title">Hygienic Panel Systems: </span><span class="body">Food-grade coatings that meet sanitation standards.</span></span></li><li class="feat-item"><span class="dot"></span><span><span class="title">High-Bay Tank Clearance: </span><span class="body">Extra height for fermentation tanks and storage silos.</span></span></li><li class="feat-item"><span class="dot"></span><span><span class="title">Reinforced Flooring: </span><span class="body">Heavy-load slabs built for tanks and bulk storage.</span></span></li><li class="feat-item"><span class="dot"></span><span><span class="title">Wash-Down Drainage: </span><span class="body">Sloped, waterproofed flooring for daily sanitation.</span></span></li></ul><div class="feat-photos"><img src="https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-e-c/images/project-khb.jpg" alt="Brewery Factory"/><img src="https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-bds/manufacturing/fabric1.jpg" alt="Brewery Factory"/></div></div><div class="feat-panel" id="feat-beverage-production-factory"><div class="feat-eyebrow">Key Features</div><ul class="feat-list"><li class="feat-item"><span class="dot"></span><span><span class="title">Column-Free Production Floor: </span><span class="body">Open layout for uninterrupted bottling and canning lines.</span></span></li><li class="feat-item"><span class="dot"></span><span><span class="title">Hygienic Sealed Surfaces: </span><span class="body">Washable, joint-sealed walls that meet food safety standards.</span></span></li><li class="feat-item"><span class="dot"></span><span><span class="title">Cold-Chain Dock Integration: </span><span class="body">Loading docks built for refrigerated logistics handoff.</span></span></li></ul></div><div class="feat-panel" id="feat-food-processing-factory"><div class="feat-eyebrow">Key Features</div><ul class="feat-list"><li class="feat-item"><span class="dot"></span><span><span class="title">Washdown-Resistant Envelope: </span><span class="body">Food-grade walls built for daily sanitation.</span></span></li><li class="feat-item"><span class="dot"></span><span><span class="title">Cold-Storage Compatible Panels: </span><span class="body">Insulated systems for refrigerated processing zones.</span></span></li><li class="feat-item"><span class="dot"></span><span><span class="title">HACCP-Style Zoning: </span><span class="body">Separated raw intake and packaging to prevent contamination.</span></span></li></ul></div></div>
-</div></div></section>
+<section class="ind-hero-sec">
+  <div class="ind-hero">
+    <div class="ind-hero-img"></div>
+    <div class="ind-hero-ov"></div>
+    <div class="ind-hero-in"><div class="container">
+      <div class="apps-eyebrow"><div class="bar"></div><span>Industry Specific</span></div>
+      <h1>Food &amp; Beverage</h1>
+      <p>Purpose-built steel structures for breweries, beverage production lines, and food processing facilities.</p>
+    </div></div>
+  </div>
+</section>
 
-<section class="ind-projects"><div class="container">
-<div class="ind-proj-head"><div class="app-eyebrow"><div class="bar"></div><span>View Projects</span></div><h2 class="ind-proj-h2">Food & Beverage</h2></div>
-<div class="proj-grid"><div class="proj-card"><div class="ar"><img src="https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-e-c/images/project-khb.jpg" alt="Khmer Beverages"/></div><div class="proj-cap"><span>Khmer Beverages</span></div></div></div></div></section>
+<section class="ind-main">
+  <div class="container">
+    <div class="ind-cols">
+
+      <!-- Left: application list -->
+      <div>
+        <div class="apps-eyebrow"><div class="bar"></div><span>Applications</span></div>
+        <h2 class="apps-title">Food &amp; Beverage</h2>
+        <ul class="apps-list">
+          <li class="apps-item"><button class="app-trigger active" onclick="selectApp(this,'brewery')"><span class="dot"></span><span>Brewery Factory</span></button></li>
+          <li class="apps-item"><button class="app-trigger" onclick="selectApp(this,'beverage')"><span class="dot"></span><span>Beverage Production Factory</span></button></li>
+          <li class="apps-item"><button class="app-trigger" onclick="selectApp(this,'food')"><span class="dot"></span><span>Food Processing Factory</span></button></li>
+        </ul>
+      </div>
+
+      <!-- Right: feature panels -->
+      <div class="feat-col">
+
+        <div class="feat-panel active" id="feat-brewery">
+          <div class="feat-eyebrow">Key Features</div>
+          <div class="feat-items">
+            <div class="feat-row"><span class="dot"></span><span><span class="label">Hygienic Panel Systems: </span><span class="desc">Food-grade coatings that meet sanitation standards.</span></span></div>
+            <div class="feat-row"><span class="dot"></span><span><span class="label">High-Bay Tank Clearance: </span><span class="desc">Extra height for fermentation tanks and storage silos.</span></span></div>
+            <div class="feat-row"><span class="dot"></span><span><span class="label">Reinforced Flooring: </span><span class="desc">Heavy-load slabs built for tanks and bulk storage.</span></span></div>
+            <div class="feat-row"><span class="dot"></span><span><span class="label">Wash-Down Drainage: </span><span class="desc">Sloped, waterproofed flooring for daily sanitation.</span></span></div>
+          </div>
+          <div class="feat-photos">
+            <img src="https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-e-c/images/project-hanuman.jpg" alt="Hanuman Brewery Factory"/>
+            <img src="https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-e-c/images/project-khb.jpg" alt="Khmer Beverages Factory"/>
+          </div>
+        </div>
+
+        <div class="feat-panel" id="feat-beverage">
+          <div class="feat-eyebrow">Key Features</div>
+          <div class="feat-items">
+            <div class="feat-row"><span class="dot"></span><span><span class="label">Column-Free Production Floor: </span><span class="desc">Open layout for uninterrupted bottling and canning lines.</span></span></div>
+            <div class="feat-row"><span class="dot"></span><span><span class="label">Hygienic Sealed Surfaces: </span><span class="desc">Washable, joint-sealed walls that meet food safety standards.</span></span></div>
+            <div class="feat-row"><span class="dot"></span><span><span class="label">Cold-Chain Dock Integration: </span><span class="desc">Loading docks built for refrigerated logistics handoff.</span></span></div>
+          </div>
+        </div>
+
+        <div class="feat-panel" id="feat-food">
+          <div class="feat-eyebrow">Key Features</div>
+          <div class="feat-items">
+            <div class="feat-row"><span class="dot"></span><span><span class="label">Washdown-Resistant Envelope: </span><span class="desc">Food-grade walls built for daily sanitation.</span></span></div>
+            <div class="feat-row"><span class="dot"></span><span><span class="label">Cold-Storage Compatible Panels: </span><span class="desc">Insulated systems for refrigerated processing zones.</span></span></div>
+            <div class="feat-row"><span class="dot"></span><span><span class="label">HACCP-Style Zoning: </span><span class="desc">Separated raw intake and packaging to prevent contamination.</span></span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Projects -->
+<section class="proj-sec">
+  <div class="container">
+    <div class="proj-eyebrow"><div class="bar"></div><span>View Projects</span></div>
+    <h2 class="proj-title">Food &amp; Beverage</h2>
+    <div class="proj-grid">
+      <div class="proj-card"><div class="ar"><img src="https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-e-c/images/project-hanuman.jpg" alt="Hanuman Brewery Factory"/></div><div class="proj-cap"><span>Hanuman Brewery Factory</span></div></div>
+      <div class="proj-card"><div class="ar"><img src="https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-e-c/images/project-khb.jpg" alt="Khmer Beverages Factory"/></div><div class="proj-cap"><span>Khmer Beverages Factory</span></div></div>
+      <div class="proj-card"><div class="ar"><img src="https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-e-c/images/project-khb.jpg" alt="Vital Premium Water Factory"/></div><div class="proj-cap"><span>Vital Premium Water Factory</span></div></div>
+      <div class="proj-card"><div class="ar"><img src="https://storage.koompi.cloud/org_6969b022790a1dffd30229c1/isi-e-c/images/project-sunfair.jpg" alt="Food Processing Facility"/></div><div class="proj-cap"><span>Food Processing Facility</span></div></div>
+    </div>
+  </div>
+</section>
+
 </main>
 <footer><div class="container">
 <div class="f-top">
@@ -66,14 +187,15 @@
 </div></footer>
 
 <script>
-function selectApp(btn,id){
-  document.querySelectorAll('.app-btn').forEach(b=>{b.classList.remove('active');b.querySelector('.app-dot').style.background='rgba(15,27,48,.2)';});
-  btn.classList.add('active');btn.querySelector('.app-dot').style.background='var(--accent)';
-  document.querySelectorAll('.feat-panel').forEach(p=>p.style.display='none');
-  var el=document.getElementById('feat-'+id);if(el)el.style.display='block';
+function selectApp(btn, id) {
+  document.querySelectorAll('.app-trigger').forEach(b => {
+    b.classList.remove('active');
+    b.querySelector('.dot').style.background = 'rgba(15,27,48,.15)';
+  });
+  btn.classList.add('active');
+  btn.querySelector('.dot').style.background = 'var(--accent)';
+  document.querySelectorAll('.feat-panel').forEach(p => p.classList.remove('active'));
+  document.getElementById('feat-' + id).classList.add('active');
 }
-document.addEventListener('DOMContentLoaded',function(){
-  document.querySelectorAll('.feat-panel').forEach((p,i)=>{p.style.display=i===0?'block':'none';});
-});
 </script>
 </body></html>
